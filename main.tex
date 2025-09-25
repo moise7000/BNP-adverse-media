@@ -8,18 +8,40 @@
 % Page de titre
 \begin{titlepage}
     \centering
-    {\Huge \textbf{Note de cadrage}} \\[1.5cm]
-    {\Large Nom du projet} \\[2cm]
-    {\large Équipe projet} \\[1cm]
+    
+    % Logos en haut
+    \includegraphics[height=2cm]{logo_telecom_nancy.png} \hfill
+    \includegraphics[height=2cm]{logo_bnp_paribas.jpg} \\[3cm]
+
+    \rule{\textwidth}{0.6pt} \\[0.8cm]
+    % Titre principal
+    {\Huge \textbf{NOTE DE CADRAGE PI}} \\[2cm]
+    
+    % Sous-titre FR/EN
+    {\large BNP PARIBAS : Classification des alertes adverse media} \\[0.5cm]
+    {\large BNP PARIBAS: Adverse Media Alerts Classification} \\[0.8cm]
+    \rule{\textwidth}{0.6pt} \\[2.5cm]
+    
+    % Auteurs
+    {\large \textbf{Auteurs :}} \\[0.3cm]
+    {\large Mathieu BREIT \\ Ewan DECIMA \\ Maher BOUHEBBAL} \\[2.5cm]
+    
+    % Année
+    {\large Année académique 2025--2026} 
+    
     \vfill
-    {\large \today}
+    
+    % Pied de page
+    \rule{6cm}{0.4pt} \\[0.3cm]
+    {\small Projet Industriel – Télécom Nancy}
 \end{titlepage}
 
-\tableofcontents
+
+%\tableofcontents
 \newpage
 
 % Parties du document
-\input{introduction}
-
+\input{finaliteDuProjet}
+\input{organisation}
 
 \end{document}
