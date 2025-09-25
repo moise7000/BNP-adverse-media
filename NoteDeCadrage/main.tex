@@ -1,0 +1,52 @@
+\documentclass[a4paper,12pt]{article}
+
+% Appel du préambule (packages, styles, etc.)
+\input{preambule}
+
+\begin{document}
+
+% Page de titre
+\begin{titlepage}
+    \centering
+    
+    % Logos en haut
+    \includegraphics[height=2cm]{logo_telecom_nancy.png} \hfill
+    \includegraphics[height=2cm]{logo_bnp_paribas.jpg} \\[3cm]
+
+    \rule{\textwidth}{0.6pt} \\[0.8cm]
+    % Titre principal
+    {\Huge \textbf{NOTE DE CADRAGE PI}} \\[2cm]
+    
+    % Sous-titre FR/EN
+    {\large BNP PARIBAS : Classification des alertes adverse media} \\[0.5cm]
+    {\large BNP PARIBAS: Adverse Media Alerts Classification} \\[0.8cm]
+    \rule{\textwidth}{0.6pt} \\[2.5cm]
+    
+    % Auteurs
+    {\large \textbf{Auteurs :}} \\[0.3cm]
+    {\large Mathieu BREIT \\ Ewan DECIMA \\ Maher BOUHEBBAL} \\[2.5cm]
+    
+    % Année
+    {\large Année académique 2025--2026} 
+    
+    \vfill
+    
+    % Pied de page
+    \rule{6cm}{0.4pt} \\[0.3cm]
+    {\small Projet Industriel – Télécom Nancy}
+\end{titlepage}
+
+
+%\tableofcontents
+\newpage
+
+% Parties du document
+\input{acteurs}
+\input{finaliteDuProjet}
+\input{objectifsPartages}
+\input{contraintes}
+\input{organisation}
+\input{livrables}
+
+
+\end{document}
