@@ -1,0 +1,88 @@
+\documentclass[a4paper,11pt]{article}
+
+% Encodage et langue
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+% Mise en page
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{lmodern}
+\usepackage{setspace}
+\onehalfspacing
+
+% Couleurs et encadrés
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{listings,breakable}
+
+% Titres
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection.}{1em}{}
+
+% Tableaux simplifiés
+\usepackage{array}
+
+% Header du document
+\title{\LARGE Compte rendu de réunion \\ \large BNP Paribas – 24/09/2025}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+% Infos générales
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Informations générales]
+\textbf{Date :} 24/09/2025 \\
+\textbf{Lieu :} Visioconférence : Nancy/Luxembourg \\
+\textbf{Objet :} Lancement projet industriel BNP Paribas-Luxembourg
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+\section*{1. Contexte}
+La réunion marque le lancement du projet avec BNP Paribas-Luxembourg. L'objectif était de définir l'organisation, les ressources nécessaires et les prochaines étapes.
+
+\section*{2. Participants}
+\begin{tcolorbox}[colback=gray!5!white,colframe=black!75!black,title=Participants]
+\begin{tabular}{>{\bfseries}l l}
+Côté BNP & Jérome VERGENDO, Frédéric LANGEN \\
+Côté notre équipe & Maher BOUHEBBAL, Mathieu BREIT, Ewan DECIMA \\
+Encadrant pédagogique & Olivier Festor
+\end{tabular}
+\end{tcolorbox}
+
+\section*{3. Définition du projet}
+Le projet consiste à partir du bot existant qui permet déjà de rechercher des articles de presse concernant des clients potentiels et à développer un \textbf{LLM (Large Language Model)} capable d’analyser ces articles. L'objectif est de déterminer automatiquement si un client présente ou non un risque en se basant sur le contenu de la presse et la matrice d'analyse fournie par BNP.
+
+\section*{4. Organisation du projet}
+Le développement sera assuré par notre équipe avec une mise en commun sur un projet Github. Les réunions auront lieu chaque jeudi de 14h à 15h. Une rencontre physique au Luxembourg doit être planifiée pour octobre.
+
+\section*{5. Aspects techniques}
+Concernant la partie technique, nous utiliserons nos propres solutions pour l’implémentation,
+avec notre projet GitHub et une liberté sur les langages employés. Cependant, l’accès aux articles
+Dow Jones Factiva est limité pour des raisons de confidentialité. La matrice d’analyse fournie
+par BNP Paribas servira à estimer l'impact sur le risque encouru par BNP Paribas avec ses clients/investisseurs des clients potentiels. Le volume de données
+côté BNP est estimé entre 2 000 et 3 000 noms par jour.
+
+
+\section*{6. Gestion de projet et livrables}
+La planification inclut la définition de la fréquence et des objectifs des rendus, avec la possibilité de réaliser une interface utilisateur si le planning le permet. Ensuite, la note de cadrage
+devra être rendue avant le vendredi 3 octobre et envoyée 1 à 2 jours à l’avance à l’entreprise
+pour analyse, avec discussion sur les points à revoir lors de la réunion du jeudi 2 octobre. Enfin,
+les livrables doivent être adaptés à un public non technique.
+
+
+\section*{7. Points financiers}
+Les éventuels frais, tels que l'achat de tokens pour l'utilisation de l'API OpenAI, devront être présentés à l'entreprise avant toute mise en place.
+
+\section*{8. Prochaines étapes}
+\begin{itemize}
+    \item Préparation de la note de cadrage.
+    \item Planification de la réalisation du projet.
+    \item Confirmation de la rencontre au Luxembourg.
+\end{itemize}
+
+\end{document}
