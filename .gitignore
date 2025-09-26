@@ -1,0 +1,23 @@
+# Fichiers temporaires LaTeX
+*.aux
+*.bbl
+*.blg
+*.brf
+*.fdb_latexmk
+*.fls
+*.log
+*.nav
+*.out
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+*.xdv
+
+# Sauvegardes d'éditeurs
+*~
+*.swp
+*.bak
+
+# VS Code
+.vscode/
