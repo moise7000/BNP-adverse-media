@@ -1,0 +1,85 @@
+\documentclass[a4paper,11pt]{article}
+
+% Encodage et langue
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+% Mise en page
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{lmodern}
+\usepackage{setspace}
+\onehalfspacing
+
+% Couleurs et encadrés
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{listings,breakable}
+
+% Titres
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection.}{1em}{}
+
+% Tableaux simplifiés
+\usepackage{array}
+
+% Header du document
+\title{\LARGE Compte rendu de réunion \\ \large BNP Paribas – 02/10/2025}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+% Infos générales
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Informations générales]
+\textbf{Date :} 02/10/2025 \\
+\textbf{Lieu :} Visioconférence : Nancy/Luxembourg \\
+\textbf{Objet :} Brainstorm sur les aspects techniques et organisationnels du projet industriel BNP Paribas-Luxembourg
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+\section*{1. Contexte}
+Cette réunion avait pour objectif de préciser les choix techniques liés à l’utilisation de modèles de langage, la stratégie de développement open source ainsi que l’organisation du projet à moyen terme.
+
+\section*{2. Participants}
+\begin{tcolorbox}[colback=gray!5!white,colframe=black!75!black,title=Participants]
+\begin{tabular}{>{\bfseries}l l}
+Côté BNP & Jérome VERGENDO, Frédéric LANGEN \\
+Côté notre équipe & Maher BOUHEBBAL, Mathieu BREIT, Ewan DECIMA \\
+Encadrant pédagogique & Olivier Festor
+\end{tabular}
+\end{tcolorbox}
+
+\section*{3. Choix techniques}
+Le projet reposera sur des solutions \textbf{open source gratuites}, notamment le LLM hébergé sur les serveurs de l'école. \\
+L’entreprise n’a pas besoin d’héberger le modèle, car elle réutilisera le code et la documentation (RAG, prompts) en interne. 
+
+\section*{4. Langues et interface}
+Les articles de presse peuvent être rédigés dans plusieurs langues : \textbf{français, anglais, allemand, italien, espagnol}. L’anglais est à privilégier. Certaines langues comme le mandarin posent des difficultés de traduction. \\
+L’\textbf{interface utilisateur sera en anglais}.
+
+\section*{5. Gestion de projet}
+Le \textbf{diagramme de Gantt} est actuellement une version prévisionnelle, basée sur le template proposé par l’entreprise. Il distinguera la partie prévue et la partie réelle.
+
+\section*{6. Réunions à venir}
+\begin{itemize}
+    \item Pas de réunion la semaine prochaine en raison d’un séminaire.
+    \item Prochaine réunion reportée à la semaine suivante.
+    \item Une \textbf{réunion chez l’entreprise} est prévue courant novembre.
+\end{itemize}
+
+\section*{7. Gestion des accès}
+L’entreprise n’a \textbf{pas besoin d’un accès direct au dépôt Git}. Le développement restera géré par notre équipe.
+
+\section*{8. Prochaines étapes}
+\begin{itemize}
+    \item Stabilisation du Gantt.
+    \item Préparation de la prochaine réunion.
+    \item Préparation de la rencontre en novembre chez BNP.
+\end{itemize}
+
+\end{document}
