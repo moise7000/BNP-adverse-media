@@ -54,6 +54,33 @@ class PDFManager:
             print(f"Error while renaming PDF: {e} ")
             return None
 
+    def merge_directory(self, directory, out_name="merged.pdf"):
+
+        dir_path = Path(directory)
+
+        if not dir_path.exists():
+            raise ValueError(f"Directory '{directory}' does not exist")
+
+        if not dir_path.is_dir():
+            raise ValueError(f"Directory '{directory}' is not a directory")
+
+        try:
+            pdf_files = sorted(dir_path.glob("*.pdf"))
+
+            if not pdf_files:
+                raise ValueError("No PDF files to merge")
+
+            pdf_paths = [str(pdf) for pdf in pdf_files]
+            print(f"PDFs found and ready to be merged : {pdf_paths}")
+
+
+            return self.merge_pdf_files(pdf_paths, out_name=out_name)
+
+        except Exception as e:
+            print(f"Error while merging PDFs: {e}")
+            return None
+
+
 
 if __name__ == "__main__":
     pdf_manager = PDFManager(out_directory="./generated_pdfs")
@@ -61,6 +88,8 @@ if __name__ == "__main__":
     try:
         pdfs = ["../articlesBNP/Agence France Presse, 29-Jan-2025.pdf", "../articlesBNP/Associated Press Newswires, 04-Sep-2024.pdf"]
         pdf_manager.merge_pdf_files(pdfs, out_name="trump_merged.pdf")
+
+        pdf_manager.merge_directory("../articlesBNP/trump", out_name="trump_articles.pdf")
     except ValueError as e:
         print(f"Erreur : {e}")
 
