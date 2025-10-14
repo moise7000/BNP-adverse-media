@@ -6,35 +6,36 @@ import os
 class PDFManager:
     def __init__(self, out_directory=None):
         """
-        Initialise une instance de PDFManager.
+        Initializes a PDFManager instance.
 
         Args:
-            out_directory (str, optional): Le répertoire de sortie pour les fichiers générés.
-                                          Par défaut, utilise le répertoire courant.
+            out_directory (str, optional): The output directory for generated PDF files.
+                                          Defaults to the current working directory if not provided.
 
         Raises:
-            Crée le répertoire s'il n'existe pas.
+            Creates the directory if it does not exist.
         """
         self.out_directory = out_directory or Path.cwd()
         Path(self.out_directory).mkdir(parents=True, exist_ok=True)
 
     def merge_pdf_files(self, pdf_files, out_name="merged.pdf"):
         """
-        Fusionne une liste de fichiers PDF en un seul fichier.
+        Merges a list of PDF files into a single PDF document.
 
         Args:
-            pdf_files (list): Liste des chemins vers les fichiers PDF à fusionner.
-            out_name (str, optional): Nom du fichier PDF de sortie. Par défaut, "merged.pdf".
+            pdf_files (list): List of file paths to PDF files to be merged.
+            out_name (str, optional): Name of the output PDF file. Defaults to "merged.pdf".
 
         Returns:
-            str: Le chemin complet du fichier fusionné en cas de succès, None en cas d'erreur.
+            str: The full path of the merged PDF file on success, None on error.
 
         Raises:
-            ValueError: Si la liste pdf_files est vide ou si un fichier n'existe pas.
+            ValueError: If pdf_files list is empty or if any PDF file does not exist.
 
         Example:
             >>> manager = PDFManager()
             >>> manager.merge_pdf_files(["file1.pdf", "file2.pdf"], "output.pdf")
+            PDFs successfully merged : /path/to/merged/output.pdf
         """
         if not pdf_files:
             raise ValueError("No PDF files to merge")
@@ -61,25 +62,26 @@ class PDFManager:
 
     def rename_pdf_file(self, pdf_path, name):
         """
-        Renomme un fichier PDF existant.
+        Renames an existing PDF file.
 
         Args:
-            pdf_path (str): Le chemin complet du fichier PDF à renommer.
-            name (str): Le nouveau nom pour le fichier (avec ou sans extension .pdf).
+            pdf_path (str): The full file path of the PDF file to be renamed.
+            name (str): The new name for the file (with or without .pdf extension).
 
         Returns:
-            str: Le chemin complet du fichier renommé en cas de succès, None en cas d'erreur.
+            str: The full path of the renamed PDF file on success, None on error.
 
         Raises:
-            ValueError: Si le fichier PDF n'existe pas.
+            ValueError: If the PDF file does not exist.
 
         Note:
-            Si un fichier avec le même nom existe déjà, il sera remplacé.
-            L'extension ".pdf" est ajoutée automatiquement si elle n'est pas présente.
+            If a file with the same name already exists, it will be replaced.
+            The .pdf extension is automatically added if not present in the provided name.
 
         Example:
             >>> manager = PDFManager()
             >>> manager.rename_pdf_file("old_name.pdf", "new_name")
+            Pdf file /path/to/new_name.pdf has been renamed.
         """
         source_path = Path(pdf_path)
         if not source_path.exists():
@@ -103,27 +105,28 @@ class PDFManager:
 
     def merge_directory(self, directory, out_name="merged.pdf"):
         """
-        Fusionne tous les fichiers PDF d'un répertoire en un seul fichier.
+        Merges all PDF files from a directory into a single PDF document.
 
         Args:
-            directory (str): Le chemin du répertoire contenant les fichiers PDF.
-            out_name (str, optional): Nom du fichier PDF de sortie. Par défaut, "merged.pdf".
+            directory (str): The file path of the directory containing PDF files.
+            out_name (str, optional): Name of the output PDF file. Defaults to "merged.pdf".
 
         Returns:
-            str: Le chemin complet du fichier fusionné en cas de succès, None en cas d'erreur.
+            str: The full path of the merged PDF file on success, None on error.
 
         Raises:
-            ValueError: Si le répertoire n'existe pas, n'est pas un répertoire,
-                       ou ne contient aucun fichier PDF.
+            ValueError: If the directory does not exist, is not a directory,
+                       or contains no PDF files.
 
         Note:
-            Les fichiers PDF sont traités dans l'ordre alphabétique croissant.
-            Le fichier de sortie est sauvegardé dans le répertoire de sortie
-            défini lors de l'initialisation de PDFManager.
+            PDF files are processed in alphabetical order.
+            The output file is saved to the output directory specified during
+            PDFManager initialization.
 
         Example:
             >>> manager = PDFManager("./output")
             >>> manager.merge_directory("./pdfs_to_merge", "merged_all.pdf")
+            PDFs found and ready to be merged : ['/path/to/file1.pdf', '/path/to/file2.pdf']
         """
         dir_path = Path(directory)
 
