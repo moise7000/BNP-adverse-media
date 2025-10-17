@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload Sécurisé - Portail Bancaire</title>
+    <title>Adverse Media</title>
     <style>
         * {
             margin: 0;
@@ -340,31 +340,31 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Dépôt de Documents</h1>
-            <p class="subtitle">Déposez vos fichiers de manière sécurisée pour votre compte bancaire</p>
+            <h1>Adverse Media - Documents Receiver</h1>
+            <p class="subtitle">Drag and drop your Articles</p>
         </div>
 
         <div class="drop-zone" id="dropZone">
             <div class="drop-zone-icon">📄</div>
-            <div class="drop-zone-text">Déposer les fichiers ici</div>
-            <div class="drop-zone-subtext">ou cliquez pour parcourir</div>
+            <div class="drop-zone-text">Drop the articles here</div>
+            <div class="drop-zone-subtext">or clikc to navigate</div>
         </div>
 
         <input type="file" id="fileInput" multiple directory webkitdirectory mozdirectory msdirectory odirectory>
 
         <div class="loading" id="loading">
             <div class="spinner"></div>
-            <div class="loading-text">Transfert en cours...</div>
+            <div class="loading-text">Downloading ...</div>
         </div>
 
         <div class="message" id="message"></div>
 
         <div class="files-section" id="filesSection">
-            <div class="section-title">Fichiers transférés</div>
+            <div class="section-title">File downloaded</div>
             <div class="tree-container" id="treeContainer"></div>
 
             <div class="button-group">
-                <button class="btn btn-secondary" id="clearBtn">Effacer</button>
+                <button class="btn btn-secondary" id="clearBtn">Delete</button>
                 <button class="btn btn-primary" id="aiBtn">IA Treatment</button>
             </div>
 
@@ -373,7 +373,7 @@
 
         <div class="security-notice">
             <span class="security-icon">🔒</span>
-            <strong>Sécurité :</strong> Tous les fichiers sont transférés de manière sécurisée et chiffrée.
+            <strong></strong>
         </div>
     </div>
 
@@ -410,7 +410,7 @@
         });
 
         clearBtn.addEventListener('click', () => {
-    if (confirm('Êtes-vous sûr de vouloir effacer tous les fichiers ?')) {
+    if (confirm('Are you sure you want to delete all files?')) {
         loading.style.display = 'block';
         message.style.display = 'none';
 
@@ -434,7 +434,7 @@
         .catch(error => {
             loading.style.display = 'none';
             message.style.display = 'block';
-            message.textContent = 'Erreur lors de la suppression: ' + error;
+            message.textContent = 'Error while deleting: ' + error;
             message.className = 'message error';
         });
     }
@@ -557,7 +557,7 @@
             .catch(error => {
                 loading.style.display = 'none';
                 message.style.display = 'block';
-                message.textContent = 'Erreur lors du transfert: ' + error;
+                message.textContent = 'Error during transfer: ' + error;
                 message.className = 'message error';
             });
         }
@@ -634,13 +634,13 @@
                     aiResult.classList.add('show');
                     aiResult.innerHTML = `
                         <div class="result-line">
-                            <span class="result-label">Analyse complétée ✓</span>
+                            <span class="result-label">Analysis completed </span>
                         </div>
                         <div class="result-line">
-                            Fichiers traités: <strong>${data.summary.total_files}</strong>
+                            Files processed: <strong>${data.summary.total_files}</strong>
                         </div>
                         <div class="result-line">
-                            Taille totale: <strong>${data.summary.formatted_size}</strong>
+                            Total size: <strong>${data.summary.formatted_size}</strong>
                         </div>
                         <div class="result-line" style="margin-top: 8px; color: #0071e3;">
                             ${data.summary.analysis}

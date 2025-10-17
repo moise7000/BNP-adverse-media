@@ -18,7 +18,7 @@ def upload():
         paths = request.form.getlist('paths[]')
 
         if not files:
-            return jsonify({'status': 'error', 'message': 'Aucun fichier reçu'}), 400
+            return jsonify({'status': 'error', 'message': 'No files received'}), 400
 
         upload_dir = 'uploads'
         os.makedirs(upload_dir, exist_ok=True)
@@ -45,7 +45,7 @@ def upload():
 
         return jsonify({
             'status': 'success',
-            'message': f'{len(file_info)} fichier(s) uploadé(s)',
+            'message': f'{len(file_info)} uploaded file(s)',
             'files': file_info
         })
     except Exception as e:
@@ -111,17 +111,17 @@ def clear_uploads():
 
             return jsonify({
                 'status': 'success',
-                'message': 'Tous les fichiers ont été supprimés'
+                'message': 'All files have been deleted'
             })
         else:
             return jsonify({
                 'status': 'success',
-                'message': 'Aucun fichier à supprimer'
+                'message': 'No files to delete'
             })
     except Exception as e:
         return jsonify({
             'status': 'error',
-            'message': f'Erreur lors de la suppression: {str(e)}'
+            'message': f'Error while deleting: {str(e)}'
         }), 500
 
 @app.route('/ai-treatment', methods=['POST'])
@@ -131,7 +131,7 @@ def ai_treatment():
         if not os.path.exists(upload_dir):
             return jsonify({
                 'status': 'error',
-                'message': 'Aucun fichier à traiter'
+                'message': 'No files to process'
             }), 400
 
         # Compter les fichiers et collecter des informations
@@ -150,10 +150,10 @@ def ai_treatment():
                 file_types[ext] = file_types.get(ext, 0) + 1
 
         # Générer une analyse plus détaillée
-        analysis_parts = [f'Analyse complétée: {total_files} fichier(s) traité(s)']
+        analysis_parts = [f'Analysis completed: {total_files} file(s) processed']
 
         if file_types:
-            types_str = ', '.join([f'{count} {ext or "sans extension"}' for ext, count in file_types.items()])
+            types_str = ', '.join([f'{count} {ext or "without extension"}' for ext, count in file_types.items()])
             analysis_parts.append(f'Types: {types_str}')
 
         result = {
