@@ -21,6 +21,6 @@ if __name__ == "__main__":
     print("Statut:", health.json())
     
     print("\nEnvoi d'une question au LLM...")
-    reponse = ask_mistral("Bonjour, peux-tu te présenter en une phrase ?", max_length=1000)
+    reponse = ask_mistral("C'est quoi CUDA ?", max_length=100)
     print("\nRéponse du LLM:")
     print(reponse)
