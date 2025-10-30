@@ -1,0 +1,79 @@
+\documentclass[a4paper,11pt]{article}
+
+% Encodage et langue
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+% Mise en page
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{lmodern}
+\usepackage{setspace}
+\onehalfspacing
+
+% Couleurs et encadrés
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{listings,breakable}
+
+% Titres
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection.}{1em}{}
+
+% Tableaux simplifiés
+\usepackage{array}
+
+% Header du document
+\title{\LARGE Compte rendu de réunion \\ \large BNP Paribas – 23/10/2025}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+% Infos générales
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Informations générales]
+\textbf{Date :} 23/10/2025 \\
+\textbf{Lieu :} Visioconférence : Nancy/Luxembourg \\
+\textbf{Objet :} Avancement du projet et tests du LLM sur le serveur de l’école
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+\section*{1. Contexte}
+La réunion avait pour objectif de faire un point sur l’avancement du projet, avec la mise en place du LLM hébergé sur le serveur de l’école, ainsi que sur les prochaines étapes de développement.
+
+\section*{2. Participants}
+\begin{tcolorbox}[colback=gray!5!white,colframe=black!75!black,title=Participants]
+\begin{tabular}{>{\bfseries}l l}
+Côté BNP & Jérome VERGENDO, Frédéric LANGEN \\
+Côté notre équipe & Maher BOUHEBBAL, Mathieu BREIT
+\end{tabular}
+\end{tcolorbox}
+
+\section*{3. Avancement technique}
+Le travail s’est poursuivi sur le \textbf{serveur de l’école} pour héberger le modèle de langage (LLM).  
+Les dépendances nécessaires ont été installées, permettant désormais de faire fonctionner un script simple.  
+Ce script lit les articles au format \texttt{.txt} et renvoie un avis \textbf{favorable ou défavorable}, accompagné d’une argumentation.  
+Cependant, les critères fournis par BNP Paribas ne sont pas encore intégrés dans l’analyse.
+
+\section*{4. Difficultés et perspectives}
+Bien que le serveur de l’école dispose d’une \textbf{capacité de calcul élevée (GPU)}, des restrictions d’accès rendent le travail compliqué.  
+Pour les prochaines étapes, l’équipe envisage de \textbf{travailler davantage sur ses machines personnelles} (CPU), afin de faciliter le développement et les tests avant déploiement.
+
+\section*{5. Organisation}
+La réunion en présentiel prévue chez l’entreprise a été \textbf{reportée à décembre} en raison d’un imprévu.  
+La \textbf{nouvelle date reste à déterminer}.
+
+\section*{6. Tâches à réalisées}
+
+Tâches à réaliser par l'ensemble du groupe :
+\begin{itemize}
+    \item Intégrer les critères d’analyse fournis par BNP Paribas dans le script du LLM.
+    \item Continuer les tests sur les machines personnelles et le serveur.
+    \item Confirmer la nouvelle date de la réunion en présentiel de décembre.
+\end{itemize}
+
+\end{document}

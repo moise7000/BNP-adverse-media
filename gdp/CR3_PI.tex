@@ -26,57 +26,57 @@
 \usepackage{array}
 
 % Header du document
-\title{\LARGE Compte rendu de réunion \\ \large BNP Paribas – 06/11/2025}
+\title{\LARGE Compte rendu de réunion \\ \large BNP Paribas – 17/10/2025}
 \date{}
 
 \begin{document}
 
-\maketitle
+    \maketitle
 
 % Infos générales
-\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Informations générales]
-\textbf{Date :} 06/11/2025 \\
-\textbf{Lieu :} Visioconférence : Nancy/Luxembourg \\
-\textbf{Objet :} Suivi technique sur le serveur et l’interface du projet BNP Paribas-Luxembourg
-\end{tcolorbox}
+    \begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Informations générales]
+        \textbf{Date :} 17/10/2025 \\
+        \textbf{Lieu :} Visioconférence : Nancy/Luxembourg \\
+        \textbf{Objet :} Suivi technique sur le serveur et l’interface du projet BNP Paribas-Luxembourg
+    \end{tcolorbox}
 
-\vspace{0.5cm}
+    \vspace{0.5cm}
 
-\section*{1. Contexte}
-Cette réunion avait pour objectif de faire un point sur l’avancement des aspects techniques, notamment la mise en place du LLM sur le serveur de l’école et le développement de l’interface utilisateur.
+    \section*{1. Contexte}
+    Cette réunion avait pour objectif de faire un point sur l’avancement des aspects techniques, notamment la mise en place du LLM sur le serveur de l’école et le développement de l’interface utilisateur.
 
-\section*{2. Participants}
-\begin{tcolorbox}[colback=gray!5!white,colframe=black!75!black,title=Participants]
-\begin{tabular}{>{\bfseries}l l}
-Côté BNP & Jérome VERGENDO, Frédéric LANGEN \\
-Côté notre équipe & Maher BOUHEBBAL, Mathieu BREIT, Ewan DECIMA \\
-Encadrant pédagogique & Olivier Festor
-\end{tabular}
-\end{tcolorbox}
+    \section*{2. Participants}
+    \begin{tcolorbox}[colback=gray!5!white,colframe=black!75!black,title=Participants]
+        \begin{tabular}{>{\bfseries}l l}
+            Côté BNP & Jérome VERGENDO, Frédéric LANGEN \\
+            Côté notre équipe & Maher BOUHEBBAL, Mathieu BREIT, Ewan DECIMA
+        \end{tabular}
+    \end{tcolorbox}
 
-\section*{3. Mise en place sur le serveur}
-Les accès au serveur de l’école ont été récupérés. Une première tentative d’installation d’un LLM a été effectuée. \\
-\textbf{Problème rencontré :} la version de Python sur le serveur n’était pas compatible avec \texttt{vLLM}. \\
-\textbf{Solution :} utilisation d’un environnement virtuel (\texttt{venv}) pour corriger le problème. Le modèle fonctionne à présent même si les résultats ne sont pas encore satisfaisant.
+    \section*{3. Mise en place sur le serveur}
+    Les accès au serveur de l’école ont été récupérés. Une première tentative d’installation d’un LLM a été effectuée. \\
+    \textbf{Problème rencontré :} la version de Python sur le serveur n’était pas compatible avec \texttt{vLLM}. \\
+    \textbf{Solution :} utilisation d’un environnement virtuel (\texttt{venv}) pour corriger le problème. Le modèle fonctionne à présent même si les résultats ne sont pas encore satisfaisant.
 
-\section*{4. Développement de l’interface}
-Une première version de l’interface \textbf{utilisateur} a été développée. \\
-Elle permet actuellement de visualiser l’arborescence des fichiers d’articles. \\
-La communication avec le LLM en back-end n’est pas encore opérationnelle. \\
-À terme, un écran permettra d’accéder aux articles ayant servi à la prise de décision sur un client.
+    \section*{4. Développement de l’interface}
+    Une première version de l’interface \textbf{utilisateur} a été développée. \\
+    Elle permet actuellement de visualiser l’arborescence des fichiers d’articles. \\
+    La communication avec le LLM en back-end n’est pas encore opérationnelle. \\
+    À terme, un écran permettra d’accéder aux articles ayant servi à la prise de décision sur un client.
 
-\section*{5. Prochaines réunions}
-La prochaine réunion aura lieu le jeudi 23 octobre à 10h.
+    \section*{5. Prochaines réunions}
+    La prochaine réunion aura lieu le jeudi 23 octobre à 10h.
 
+    La date pour la réunion chez l'entreprise a été fixé au \textbf{jeudi 6 novembre} après les vacances de la Toussaint.
 
-\section*{6. Tâches à réalisées}
-Tâches à réalisé par l'ensemble du groupe :
-\begin{itemize}
-    \item Finaliser le déploiement du LLM sur le serveur de l’école.
-    \item Trouver des solutions pour améliorer les performances du modèle.
-    \item Poursuivre le développement de l’interface Flask et sa connexion avec le LLM.
-    
-\end{itemize}
-\textbf{Deadline :} première mise en commun entre les 3 étudiants le lundi 20 octobre.
+    \section*{6. Tâches à réalisées}
+    Tâches à réalisé par l'ensemble du groupe :
+    \begin{itemize}
+        \item Finaliser le déploiement du LLM sur le serveur de l’école.
+        \item Trouver des solutions pour améliorer les performances du modèle.
+        \item Poursuivre le développement de l’interface Flask et sa connexion avec le LLM.
+
+    \end{itemize}
+    \textbf{Deadline :} première mise en commun lundi 20 octobre.
 
 \end{document}
