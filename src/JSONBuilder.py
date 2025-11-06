@@ -30,7 +30,7 @@ class JSONBuilder:
         text = self.text
         data = {}
         data["article"] = self._filename
-        data["input"] = " "
+        data["prompt"] = " "
         data["text"] = text
         data["output"] = " "
         json_data = json.dumps(data, indent=2, ensure_ascii=False)
