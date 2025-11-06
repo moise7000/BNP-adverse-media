@@ -1,6 +1,5 @@
 import PyPDF2
 import pprint
-from pathlib import Path
 import json
 
 
@@ -21,18 +20,10 @@ class TextExtractor:
         """
         self.pdf = pdf_file_path
 
-    @property
-    def _title(self) -> str:
-        """
-        Retourne le nom du fichier PDF sans l'extension.
 
-        Returns:
-            str: Nom du fichier sans extension.
-        """
-        return Path(self.pdf).stem
 
     @property
-    def _text(self):
+    def text(self):
         """
         Extrait et retourne tout le texte du PDF.
 
@@ -47,24 +38,9 @@ class TextExtractor:
                 text += page.extract_text()
         return text
 
-    def build_JSON(self):
-        """
-        Construit un objet JSON contenant le titre et le texte du PDF.
 
-        Returns:
-            str: Chaîne JSON formatée contenant les données extraites du PDF.
-                 Structure: {"article": str, "input": str, "text": str, "output": str}
-        """
-        text = self._text
-        data = {}
-        data["article"] = self._title
-        data["input"] = " "
-        data["text"] = text
-        data["output"] = " "
-        json_data = json.dumps(data, indent=2, ensure_ascii=False)
-        return json_data
 
 
 if __name__ == "__main__":
     text_extractor = TextExtractor(pdf_file_path="uploads/articlesBNP/test.pdf")
-    print(text_extractor.build_JSON())
+    print(text_extractor.text)
