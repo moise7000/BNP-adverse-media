@@ -1,1 +1,4 @@
 pypdf2
+json
+pprint
+pathlib
